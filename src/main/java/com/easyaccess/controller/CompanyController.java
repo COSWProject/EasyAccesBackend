@@ -15,15 +15,16 @@ public class CompanyController {
     @Autowired
     CompanyService companyService;
 
-    @PostMapping("new")
-    public void create(@RequestBody Company company) {
-        companyService.create(company);
-    }
-
     @GetMapping("id/{id}")
     @ResponseBody
     public Company getById(@PathVariable("id") String id) {
         return companyService.getById(id);
+    }
+
+    @GetMapping("email/{email}")
+    @ResponseBody
+    public Company getByEmail(@PathVariable("email") String email) {
+        return companyService.getByEmail(email);
     }
 
     @GetMapping("all")

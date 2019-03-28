@@ -48,4 +48,9 @@ public class CompanyServiceImpl implements CompanyService {
     public Company getByNit(Long nit) {
         return companyRepository.findByNit(nit);
     }
+
+    @Override
+    public Company getByEmail(String email) {
+        return companyRepository.findByEmail(email);
+    }
 }

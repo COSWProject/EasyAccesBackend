@@ -6,4 +6,6 @@ public interface CompanyRepository extends MongoRepository<Company, String> {
 
     Company findByNit(Long nit);
 
+    Company findByEmail(String email);
+
 }

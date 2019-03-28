@@ -16,4 +16,6 @@ public interface CompanyService {
 
     Company getByNit(Long nit);
 
+    Company getByEmail(String email);
+
 }
