@@ -1,8 +1,12 @@
 package com.easyaccess.model;
 
+import org.springframework.data.annotation.Id;
+
 public class Company {
 
+    @Id
     private String id;
+
     private String name;
     private String ubication;
     private String email;
