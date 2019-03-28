@@ -2,7 +2,7 @@ package com.easyaccess.model;
 
 public class Company {
 
-    private Integer id;
+    private String id;
     private String name;
     private String ubication;
     private String email;
@@ -19,7 +19,7 @@ public class Company {
         this.password = password;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
