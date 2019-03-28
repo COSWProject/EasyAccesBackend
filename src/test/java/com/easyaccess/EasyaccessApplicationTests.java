@@ -1,4 +1,4 @@
-package com.easyaccess.easyaccess;
+package com.easyaccess;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
