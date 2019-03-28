@@ -15,7 +15,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public void create(Company company) {
-
+        companyRepository.save(company);
     }
 
     @Override
@@ -25,16 +25,16 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<Company> getAll() {
-        return null;
+        return companyRepository.findAll();
     }
 
     @Override
     public void deleteById(String id) {
-
+        companyRepository.deleteById(id);
     }
 
     @Override
     public Company getByNit(Long nit) {
-        return null;
+        return companyRepository.findByNit(nit);
     }
 }
