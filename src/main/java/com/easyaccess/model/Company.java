@@ -14,6 +14,9 @@ public class Company {
     private Long nit;
     private String password;
 
+    public Company() {
+    }
+
     public Company(String name, String ubication, String email, Long phoneNumber, Long nit, String password) {
         this.name = name;
         this.ubication = ubication;
