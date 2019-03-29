@@ -13,6 +13,7 @@ public class Company {
     private Long phoneNumber;
     private Long nit;
     private String password;
+    private String rol;
 
     public Company() {
     }
@@ -24,6 +25,7 @@ public class Company {
         this.phoneNumber = phoneNumber;
         this.nit = nit;
         this.password = password;
+        this.rol = "Company";
     }
 
     public String getId() {
@@ -76,5 +78,9 @@ public class Company {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
     }
 }
