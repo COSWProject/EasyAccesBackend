@@ -1,7 +1,7 @@
-package com.easyaccess.controller;
+package com.easyaccess.controller.user;
 
-import com.easyaccess.model.Company;
-import com.easyaccess.service.CompanyService;
+import com.easyaccess.model.user.User;
+import com.easyaccess.service.user.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,38 +13,37 @@ import java.util.Date;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("token")
-public class TokenController {
+public class UserTokenController {
 
     @Autowired
-    CompanyService companyService;
+    UserService userService;
 
-    @PostMapping("new")
-    public void create(@RequestBody Company company) {
-        companyService.create(company);
+    @PostMapping("newUser")
+    public void create(@RequestBody User user) {
+        userService.create(user);
     }
 
-
-    @PostMapping("login")
-    public Token login(@RequestBody Company login) throws ServletException {
+    @PostMapping("loginUser")
+    public UserTokenController.Token login(@RequestBody User login) throws ServletException {
 
         String jwtToken = "";
 
         String email = login.getEmail();
         String password = login.getPassword();
 
-        Company company = companyService.getByEmail(email);
+        User user = userService.getByEmail(email);
 
-        if (company == null) {
+        if (user == null) {
             throw new ServletException("User username not found.");
         }
 
-        String pwd = company.getPassword();
+        String pwd = user.getPassword();
 
         if (!password.equals(pwd)) {
             throw new ServletException("Invalid login. Please check your name and password.");
         }
 
-        if (company.getRol() == "Company") {
+        if (user.getRol() == "Company") {
             jwtToken = Jwts.builder().setSubject(email).claim("roles", "company").setIssuedAt(new Date()).
                     signWith(SignatureAlgorithm.HS256, "secretkey").compact();
         } else {
@@ -54,8 +53,6 @@ public class TokenController {
 
         return new Token(jwtToken);
     }
-
-
 
     public class Token {
         String accessToken;
@@ -72,5 +69,4 @@ public class TokenController {
             this.accessToken = access_token;
         }
     }
-
 }
