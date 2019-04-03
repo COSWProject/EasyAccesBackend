@@ -29,7 +29,6 @@ public class UserController {
     @GetMapping("userbyemail/{email}")
     @ResponseBody
     public String getUserByEmail (@PathVariable("email") String email) {
-        System.out.println("ENTRA");
         List<String> user = new ArrayList<>();
         User u = userService.getByEmail(email);
         user.add(u.getName());
