@@ -22,10 +22,12 @@ public class User {
     private String rol;
 
 
+    public User() {
+    }
 
-    public User(){}
-
-    public User(int cardId, String name, String email, String address, String password, String organization, int mobilePhone,int homePhone, String occupation, String city, String state, int postalCode, String country){
+    public User(int cardId, String name, String email, String address, String password, String organization,
+                int mobilePhone, int homePhone, String occupation, String city, String state,
+                int postalCode, String country) {
         this.cardId = cardId;
         this.name = name;
         this.email = email;
@@ -46,7 +48,7 @@ public class User {
         return id;
     }
 
-    public int getCardId(){
+    public int getCardId() {
         return cardId;
     }
 
