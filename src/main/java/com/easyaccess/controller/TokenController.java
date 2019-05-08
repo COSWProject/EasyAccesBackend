@@ -35,7 +35,7 @@ public class TokenController {
         Company company = companyService.getByEmail(email);
 
         if (company == null) {
-            throw new ServletException("User username not found.");
+            throw new ServletException("Email not found.");
         }
 
         String pwd = company.getPassword();
@@ -44,17 +44,11 @@ public class TokenController {
             throw new ServletException("Invalid login. Please check your name and password.");
         }
 
-        if (company.getRol() == "Company") {
-            jwtToken = Jwts.builder().setSubject(email).claim("roles", "company").setIssuedAt(new Date()).
-                    signWith(SignatureAlgorithm.HS256, "secretkey").compact();
-        } else {
-            jwtToken = Jwts.builder().setSubject(email).claim("roles", "user").setIssuedAt(new Date()).
-                    signWith(SignatureAlgorithm.HS256, "secretkey").compact();
-        }
+        jwtToken = Jwts.builder().setSubject(email).claim("roles", "company").setIssuedAt(new Date()).
+                signWith(SignatureAlgorithm.HS256, "secretkey").compact();
 
         return new Token(jwtToken);
     }
-
 
 
     public class Token {
