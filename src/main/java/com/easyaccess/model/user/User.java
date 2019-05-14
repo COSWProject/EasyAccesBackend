@@ -11,7 +11,6 @@ public class User {
     private String email;
     private String password;
     private int mobilePhone;
-    private String occupation;
     private String city;
     private String rol;
 
@@ -19,14 +18,13 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String password, int mobilePhone, String occupation, String city) {
+    public User(String name, String email, String password, int mobilePhone,  String city, String rol) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.mobilePhone = mobilePhone;
-        this.occupation = occupation;
         this.city = city;
-        this.rol = "User";
+        this.rol = rol;
     }
 
     public String getId() {
@@ -63,14 +61,6 @@ public class User {
 
     public void setMobilePhone(int mobilePhone) {
         this.mobilePhone = mobilePhone;
-    }
-
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
     }
 
     public String getCity() {
