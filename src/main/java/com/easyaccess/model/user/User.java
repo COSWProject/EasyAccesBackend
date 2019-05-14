@@ -6,50 +6,31 @@ public class User {
 
     @Id
     private String id;
-    private int cardId;
+
     private String name;
     private String email;
-    private String address;
     private String password;
-    private String organization;
     private int mobilePhone;
-    private int homePhone;
     private String occupation;
     private String city;
-    private String state;
-    private int postalCode;
-    private String country;
     private String rol;
 
 
     public User() {
     }
 
-    public User(int cardId, String name, String email, String address, String password, String organization,
-                int mobilePhone, int homePhone, String occupation, String city, String state,
-                int postalCode, String country) {
-        this.cardId = cardId;
+    public User(String name, String email, String password, int mobilePhone, String occupation, String city) {
         this.name = name;
         this.email = email;
-        this.address = address;
         this.password = password;
-        this.organization = organization;
         this.mobilePhone = mobilePhone;
-        this.homePhone = homePhone;
         this.occupation = occupation;
         this.city = city;
-        this.state = state;
-        this.postalCode = postalCode;
-        this.country = country;
         this.rol = "User";
     }
 
     public String getId() {
         return id;
-    }
-
-    public int getCardId() {
-        return cardId;
     }
 
     public String getName() {
@@ -68,14 +49,6 @@ public class User {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -84,28 +57,12 @@ public class User {
         this.password = password;
     }
 
-    public String getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
-
     public int getMobilePhone() {
         return mobilePhone;
     }
 
     public void setMobilePhone(int mobilePhone) {
         this.mobilePhone = mobilePhone;
-    }
-
-    public int getHomePhone() {
-        return homePhone;
-    }
-
-    public void setHomePhone(int homePhone) {
-        this.homePhone = homePhone;
     }
 
     public String getOccupation() {
@@ -122,30 +79,6 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getRol() {
