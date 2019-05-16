@@ -9,7 +9,7 @@ public class Access {
     private String owner;
     private String qr;
     private String invitedBy;
-    private String Institution;
+    private String institution;
     private String time;
     private String date;
     private String expirationTime;
@@ -17,11 +17,12 @@ public class Access {
     public Access() {
     }
 
-    public Access( String owner, String qr, String invitedBy, String institution, String time, String date, String expirationTime) {
+    public Access(String owner, String qr, String invitedBy, String institution,
+                  String time, String date, String expirationTime) {
         this.owner = owner;
         this.qr = qr;
         this.invitedBy = invitedBy;
-        Institution = institution;
+        this.institution = institution;
         this.time = time;
         this.date = date;
         this.expirationTime = expirationTime;
@@ -56,11 +57,11 @@ public class Access {
     }
 
     public String getInstitution() {
-        return Institution;
+        return institution;
     }
 
     public void setInstitution(String institution) {
-        Institution = institution;
+        institution = institution;
     }
 
     public String getTime() {
