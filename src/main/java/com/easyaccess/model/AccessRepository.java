@@ -6,4 +6,6 @@ public interface AccessRepository extends MongoRepository<Access, String> {
 
     Access findByOwner(String owner);
 
+    
+
 }
