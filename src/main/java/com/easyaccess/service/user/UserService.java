@@ -14,7 +14,7 @@ public interface UserService {
 
     void deleteById(String id);
 
-    User getByCardId(int cardId);
+    User getByCedula(String cedula);
 
     User getByEmail(String email);
 }

@@ -15,4 +15,8 @@ public interface AccessService {
     void deleteById(String id);
 
     Access getByOwner(String owner);
+
+    List<Access> getAccessByOwner(String owner);
+
+    List<Access> getAccessByInvited(String invitedBy);
 }

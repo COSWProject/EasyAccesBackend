@@ -7,6 +7,7 @@ public class User {
     @Id
     private String id;
 
+    private String cedula;
     private String name;
     private String email;
     private String password;
@@ -18,7 +19,8 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String password, int mobilePhone,  String city, String rol) {
+    public User(String cedula, String name, String email, String password, int mobilePhone,  String city, String rol) {
+        this.cedula = cedula;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -29,6 +31,14 @@ public class User {
 
     public String getId() {
         return id;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getName() {

@@ -45,8 +45,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getByCardId(int cardId) {
-        return userRepository.findById(cardId);
+    public User getByCedula(String cedula) {
+        return userRepository.findByCedula(cedula);
     }
 
     @Override

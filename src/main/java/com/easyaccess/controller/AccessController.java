@@ -27,6 +27,18 @@ public class AccessController {
         return accessService.getByOwner(owner);
     }
 
+    @GetMapping("meetingsOwner/{owner}")
+    @ResponseBody
+    public List<Access> getAccessByOwner(@PathVariable("owner") String owner) {
+        return accessService.getAccessByOwner(owner);
+    }
+
+    @GetMapping("meetingsInvitedBy/{invitedBy}")
+    @ResponseBody
+    public List<Access> getAccessByInvited(@PathVariable("invitedBy") String invitedBy){
+        return accessService.getAccessByInvited(invitedBy);
+    }
+
     @GetMapping("all")
     @ResponseBody
     public List<Access> getAll() { return accessService.getAll(); }

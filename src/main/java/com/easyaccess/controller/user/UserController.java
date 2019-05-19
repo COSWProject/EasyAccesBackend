@@ -28,12 +28,6 @@ public class UserController {
         return userService.getByEmail(email);
     }
 
-    @GetMapping("userbyemail/{email}")
-    @ResponseBody
-    public User getUserByEmail(@PathVariable("email") String email) {
-        return userService.getByEmail(email);
-
-    }
 
     @GetMapping("all")
     @ResponseBody
@@ -46,8 +40,8 @@ public class UserController {
         userService.deleteById(id);
     }
 
-    @GetMapping("cardId/{cardId}")
-    public User getByCardId(@PathVariable("cardId") int cardId) {
-        return userService.getByCardId(cardId);
+    @GetMapping("cedula/{cardId}")
+    public User getByCardId(@PathVariable("cardId") String cedula) {
+        return userService.getByCedula(cedula);
     }
 }

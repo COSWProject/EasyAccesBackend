@@ -49,4 +49,14 @@ public class AccessServiceImpl implements AccessService {
         return accessRepository.findByOwner(owner);
     }
 
+    @Override
+    public List<Access> getAccessByOwner(String owner) {
+        return accessRepository.findAccessByOwner(owner);
+    }
+
+    @Override
+    public List<Access> getAccessByInvited(String invitedBy){
+        return accessRepository.findAccessByInvitedBy(invitedBy);
+    }
+
 }

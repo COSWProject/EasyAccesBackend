@@ -7,4 +7,6 @@ public interface UserRepository extends MongoRepository<User, String> {
     User findById(int id);
 
     User findByEmail(String email);
+
+    User findByCedula(String cedula);
 }
