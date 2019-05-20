@@ -44,4 +44,10 @@ public class UserController {
     public User getByCardId(@PathVariable("cardId") String cedula) {
         return userService.getByCedula(cedula);
     }
+
+    @PutMapping("update")
+    @ResponseBody
+    public void update(@RequestBody User user) {
+        userService.update(user);
+    }
 }

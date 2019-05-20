@@ -17,4 +17,6 @@ public interface UserService {
     User getByCedula(String cedula);
 
     User getByEmail(String email);
+
+    void update(User user);
 }
